@@ -1,0 +1,284 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #020617;
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* TEXTOS */
+.small {
+    color: #64748b;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    margin-top: -80px; /* 🔥 sobe o texto */
+    position: relative;
+    z-index: 5;
+}
+
+.big {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.sub {
+    margin-top: 15px;
+    color: #94a3b8;
+}
+
+
+/* DOT */
+.dot {
+    color: #f87171;
+    text-shadow: 0 0 10px rgba(248,113,113,0.8);
+}
+
+/* CTA fixo no topo*/
+.cta {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+}
+/*Centraliza o CTA fixo no topo*/
+.cta-wrapper {
+    display: flex;
+    justify-content: center; /* centraliza */
+    display: flex;
+    margin-top: -50px; /* 🔥 isso puxa ele pra cima */
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
+}
+/* CTA BOTÃO aparece somente quando a página chega no fim da rolagem */
+.cta-fixed {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #22c55e;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0; /* escondido */
+    pointer-events: none; /* não clicável */
+    transition: 0.4s;
+}
+    /* quando aparecer */
+    .cta-fixed.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+
+/* SECTIONS */
+section {
+    margin: 120px 0;
+    padding: 0 clamp(60px, 10vw, 200px);
+}
+/* LINHAS */
+.lines p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+.line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #1e293b, transparent);
+    margin: 15px 0;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    color: white;
+    font-weight: 600;
+}
+
+/* IMPACT */
+.impact {
+    margin-top: 40px;
+    color: #f87171;
+    font-size: 1.6rem;
+    text-shadow: 0 0 12px rgba(248,113,113,0.7);
+}
+
+/* FINAL */
+.final {
+    margin-top: 10px;
+    color: #94a3b8;
+}
+
+/* BENEFITS */
+.benefits p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .big {
+        font-size: 2.2rem;
+    }
+}
+
+/* FAIXA NO TOPO */
+.top-timer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #ef4444, #f97316);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    z-index: 9999;
+    box-shadow: 0 5px 20px rgba(239,68,68,0.4);
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#timerText { /* opcional */
+    margin-left: 0.25rem;
+}
+
+/* empurra o conteúdo pra baixo */
+body {
+    padding-top: 45px;
+}
+
+/* FUNDO GLOBAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: radial-gradient(circle at 20% 20%, rgba(34,197,94,0.15), transparent 40%), radial-gradient(circle at 80% 30%, rgba(239,68,68,0.15), transparent 40%), radial-gradient(circle at 50% 80%, rgba(59,130,246,0.15), transparent 50%), #020617;
+    background-attachment: fixed;
+}
+
+/* HERO COM IMAGEM */
+.hero {
+    position: relative;
+    padding: 120px 20px;
+    text-align: center;
+    background: url("https://cdn-clubecandeias.s3.sa-east-1.amazonaws.com/uploads/images/pico-parana-montanhas-sul-do-brasil-clube-candeias.jpg") center/cover no-repeat;
+}
+
+/* OVERLAY ESCURO + DEGRADE */
+.hero::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: linear-gradient( to bottom, rgba(2,6,23,0.8), rgba(2,6,23,0.95) );
+   z-index: 0;
+    }
+
+/* GARANTE TEXTO NA FRENTE */
+.hero * {
+        position: relative;
+        z-index: 1;
+}
+
+/* CAMADA DE LUZ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(34,197,94,0.08), transparent 50%), radial-gradient(circle at 70% 40%, rgba(239,68,68,0.08), transparent 50%), radial-gradient(circle at 50% 80%, rgba(59,130,246,0.08), transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.big {
+    text-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+.impact {
+    text-shadow: 0 0 10px rgba(248,113,113,0.8), 0 0 20px rgba(248,113,113,0.4);
+}
+
+.center {
+    text-align: center;
+}
+
+/* deixa o "CHOOSE NOW" bonito e destacado */
+.choose {
+    margin-top: 30px;
+    font-weight: 900;
+    color: #f87171;
+    text-shadow: 0 0 10px rgba(248,113,113,0.7);
+    font-size: 20px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/*FAQ*/
+.faq {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+details {
+    background: rgba(255,255,255,0.03);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: 600;
+    list-style: none;
+}
+
+    summary::after {
+        content: "➕";
+        float: right;
+        transition: 0.3s;
+    }
+
+details[open] summary::after {
+    content: "➖";
+}
+
+details p {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.7);
+}
