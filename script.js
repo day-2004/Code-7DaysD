@@ -70,48 +70,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //// TEMPO TOTAL (15 min)
-const duration = 15 * 60 * 1000;
+//const duration = 15 * 60 * 1000;
 
 //// pega tempo salvo
-let startTime = localStorage.getItem("startTime");
+//let startTime = localStorage.getItem("startTime");
 
 //// se não existir, cria
-if (!startTime) {
-    startTime = Date.now();
-    localStorage.setItem("startTime", startTime);
-}
+//if (!startTime) {
+//    startTime = Date.now();
+//    localStorage.setItem("startTime", startTime);
+//}
 
-const timerText = document.getElementById("timerText");
+//const timerText = document.getElementById("timerText");
 
-function updateTimer() {
-    const now = Date.now();
-    const elapsed = now - startTime;
-    const remaining = duration - elapsed;
+//function updateTimer() {
+//    const now = Date.now();
+//    const elapsed = now - startTime;
+//    const remaining = duration - elapsed;
 
-    if (remaining <= 0) {
-        timerText.textContent = "Expired";
-        return;
-    }
+//    if (remaining <= 0) {
+//        timerText.textContent = "Expired";
+//        return;
+//    }
 
-    const minutes = Math.floor(remaining / 60000);
-    const seconds = Math.floor((remaining % 60000) / 1000);
+//    const minutes = Math.floor(remaining / 60000);
+//    const seconds = Math.floor((remaining % 60000) / 1000);
 
-}
+//}
 
-setInterval(updateTimer, 1000);
-updateTimer();
-const ctaButtons = document.querySelectorAll("a.cta");
+//setInterval(updateTimer, 1000);
+//updateTimer();
+//const ctaButtons = document.querySelectorAll("a.cta");
 
-ctaButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
+//ctaButtons.forEach(btn => {
+//    btn.addEventListener("click", (e) => {
+//        e.preventDefault();
 
-        const now = Date.now();
-        const elapsed = now - startTime;
-        const remaining = Math.max(0, duration - elapsed);
+//        const now = Date.now();
+//        const elapsed = now - startTime;
+//        const remaining = Math.max(0, duration - elapsed);
 
-        const checkoutURL = "https://rebrand.ly/7day-discipline";
+//        const checkoutURL = "https://rebrand.ly/7day-discipline";
 
-        window.location.href = `${checkoutURL}?time=${remaining}`;
-    });
-});
+//        window.location.href = `${checkoutURL}?time=${remaining}`;
+//    });
+//o });
