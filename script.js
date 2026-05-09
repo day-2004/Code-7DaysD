@@ -35,25 +35,19 @@ if (bigText) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // CTA BOTÕES DE CLIQUE INICIO
+    // CTA BOTÕES
     const ctaButtons = document.querySelectorAll("a.cta");
 
     ctaButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const now = Date.now();
-            const elapsed = now - startTime;
-            const remaining = Math.max(0, duration - elapsed);
+        btn.addEventListener("click", () => {
 
             const originalLink = btn.getAttribute("href");
 
-            window.location.href = `${originalLink}?time=${remaining}`;
+            window.location.href = originalLink;
         });
     });
 
-    // CTA FIXO, apesar de não ser BOTÃO DO FINAL
-    // so aparece quando o usuário chega perto do final da página
+    // CTA FIXO FINAL
     const ctaFixed = document.getElementById("ctaFixed");
 
     window.addEventListener("scroll", () => {
